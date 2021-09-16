@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "270062227978",
+    "firebase_url": "https://vhicalfinder-default-rtdb.firebaseio.com",
+    "project_id": "vhicalfinder",
+    "storage_bucket": "vhicalfinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270062227978:android:153a1f7698e7d02b0145f3",
+        "android_client_info": {
+          "package_name": "com.example.vhical_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270062227978-08c945if17q27h9f6b2et2fvn3a2c2m9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vhical_finder",
+            "certificate_hash": "dfc04c81471bc54130f37e08321794c79d027ee4"
+          }
+        },
+        {
+          "client_id": "270062227978-35o3gmdr29hb90uqpmumuq127hc0tugk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8TndO3hpmS8LhI3SfwKwxClMt2x-pyfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270062227978-35o3gmdr29hb90uqpmumuq127hc0tugk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
