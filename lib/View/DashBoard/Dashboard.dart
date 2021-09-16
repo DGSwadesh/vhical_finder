@@ -30,50 +30,9 @@ class _DashbordState extends State<Dashbord> {
   var lan = 87.3055799;
   var i = 1;
   bool isLoading = false;
+  MapController mapController = MapController();
 
   late List<Marker> demo_markers = [
-    Marker(
-      width: 80.0,
-      height: 80.0,
-      point: LatLng(23.5415983, 87.3055999),
-      builder: (ctx) => Container(
-        child: Icon(
-          Icons.pin_drop_sharp,
-          color: red,
-        ),
-      ),
-    ),Marker(
-      width: 80.0,
-      height: 80.0,
-      point: LatLng(22.5415983, 87.3055999),
-      builder: (ctx) => Container(
-        child: Icon(
-          Icons.pin_drop_sharp,
-          color: red,
-        ),
-      ),
-    ),Marker(
-      width: 80.0,
-      height: 80.0,
-      point: LatLng(21.5415983, 87.3055999),
-      builder: (ctx) => Container(
-        child: Icon(
-          Icons.pin_drop_sharp,
-          color: red,
-        ),
-      ),
-    ),Marker(
-      width: 80.0,
-      height: 80.0,
-      point: LatLng(20.5415983, 87.3055999),
-      builder: (ctx) => Container(
-        child: Icon(
-          Icons.pin_drop_sharp,
-          color: red,
-        ),
-      ),
-    ),
-
     Marker(
       width: 80.0,
       height: 80.0,
@@ -225,6 +184,7 @@ class _DashbordState extends State<Dashbord> {
                         children: [
                           Expanded(
                             child: FlutterMap(
+                              mapController: mapController,
                               options: MapOptions(
                                 center: LatLng(lat, lan),
                                 zoom: 13.0,
