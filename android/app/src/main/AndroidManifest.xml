@@ -9,8 +9,8 @@
         android:label="vhical_finder"
         android:icon="@mipmap/ic_launcher">
 
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAI_B1zvMG2sMdiYn1hYOR3PMJJIWHVUs0"/>
+        <!-- <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAI_B1zvMG2sMdiYn1hYOR3PMJJIWHVUs0"/> -->
             
         <activity
             android:name=".MainActivity"
