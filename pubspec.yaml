@@ -46,7 +46,7 @@ dependencies:
   shared_preferences: 
   image_picker: 0.7.4
   geolocator: ^7.6.0
-  google_maps_flutter: ^2.0.8
+  # google_maps_flutter: ^2.0.8
   flutter_map: ^0.13.1
   latlng: ^0.1.0
   # connection_status_bar: ^1.1.5

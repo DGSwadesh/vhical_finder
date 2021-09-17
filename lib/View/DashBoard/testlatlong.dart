@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_map/flutter_map.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
+// import 'package:latlng/latlng.dart' as latLan;
 
 // class EsriPage extends StatefulWidget {
 //   static const String route = 'esri';
@@ -11,18 +11,22 @@
 
 // class _EsriPageState extends State<EsriPage> {
 //   late MapController mapController;
+//   var isReady;
+//   latLan.LatLng? initialLatLan = latLan.LatLng(45.5231, -122.6765);
 
 //   @override
 //   void initState() {
 //     super.initState();
-
 //     mapController = MapController();
+//     isReady = mapController.onReady ?? false;
 //   }
 
-//   LatLng? _offsetToCrs(Crs crs, Offset offset, BoxConstraints constraints,
-//       [LatLng? initCenter, double? initZoom]) {
-//     var center = mapController.ready ? mapController.center : initCenter;
-//     var zoom = mapController.ready ? mapController.zoom : initZoom;
+//   latLan.LatLng? _offsetToCrs(
+//       Crs crs, Offset offset, BoxConstraints constraints,
+//       [latLan.LatLng? initCenter, double? initZoom]) {
+//     latLan.LatLng center =
+//         (isReady ? mapController.center : initCenter) as latLan.LatLng;
+//     var zoom = isReady ? mapController.zoom : initZoom;
 
 //     if (center == null || zoom == null) {
 //       return null;
@@ -45,7 +49,7 @@
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(title: Text('Esri')),
-//       drawer: buildDrawer(context, EsriPage.route),
+//       // drawer: buildDrawer(context, EsriPage.route),
 //       body: Padding(
 //         padding: EdgeInsets.all(8.0),
 //         child: Column(
@@ -64,7 +68,7 @@
 //                       constraints,
 //                       // optional center should be same as MapOptions' center
 //                       // if not provided then _offsetToCrs will return null at very first build because mapController isn't ready
-//                       LatLng(45.5231, -122.6765),
+//                       latLan.LatLng(45.5231, -122.6765),
 //                       // optional zoom should be same as MapOptions' zoom
 //                       // if not provided then _offsetToCrs will return null at very first build because mapController isn't ready
 //                       13.0,
@@ -75,7 +79,7 @@
 //                     mapController: mapController,
 //                     options: MapOptions(
 //                       crs: const Epsg3857(),
-//                       center: LatLng(45.5231, -122.6765),
+//                       center: initialLatLan,
 //                       zoom: 13.0,
 //                       onTap: (l) {
 //                         print(l);
@@ -100,4 +104,3 @@
 //     );
 //   }
 // }
-

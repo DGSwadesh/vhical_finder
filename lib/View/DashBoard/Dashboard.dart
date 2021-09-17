@@ -79,7 +79,7 @@ class _DashbordState extends State<Dashbord> {
     latlong = await determinePosition();
     lat = latlong.latitude;
     lan = latlong.longitude;
-    await getLocation();
+    // await getLocation();
 
     markers.add(Marker(
       width: 80.0,
@@ -166,7 +166,7 @@ class _DashbordState extends State<Dashbord> {
                       markers.clear();
                       var doc = snapshot.data!.docs;
                       for (var users in doc) {
-                        print(LatLng(users['lat'], users['lan']));
+                        // print(LatLng(users['lat'], users['lan']));
                         markers.add(Marker(
                           width: 80.0,
                           height: 80.0,
@@ -179,23 +179,39 @@ class _DashbordState extends State<Dashbord> {
                           ),
                         ));
                       }
-                      print('userList ${markers.length}');
+                      // print('userList ${markers.length}');
                       return Column(
                         children: [
                           Expanded(
                             child: FlutterMap(
                               mapController: mapController,
                               options: MapOptions(
-                                center: LatLng(lat, lan),
-                                zoom: 13.0,
-                              ),
+                                  center: LatLng(lat, lan),
+                                  zoom: 13.0,
+                                  onTap: (latLn) {
+                                    print('latLn');
+                                    print(latLn);
+                                    demo_markers.assign(Marker(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      point: latLn,
+                                      builder: (ctx) => Container(
+                                        child: Icon(
+                                          Icons.pin_drop_sharp,
+                                          color: Colors.pink,
+                                        ),
+                                      ),
+                                    ));
+                                    setState(() {
+                                    });
+                                  }),
                               layers: [
                                 TileLayerOptions(
                                     urlTemplate:
                                         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                                     subdomains: ['a', 'b', 'c']),
                                 MarkerLayerOptions(
-                                  markers: markers,
+                                  markers: demo_markers,
                                 ),
                               ],
                             ),
